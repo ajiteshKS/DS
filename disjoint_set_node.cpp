@@ -1,5 +1,4 @@
 #include <bits/stdc++.h>
-
 using namespace std;
 
 template <typename T>
@@ -18,14 +17,14 @@ public:
   
   void makeset(long int n)
     { 
-      for(T i=0;i<n;i++)
+      for(T j=0;j<n;j++)
       { node* np = new node;
         np->parent = np;
-        np->data = i;
+        np->data = j;
         np->rank = 0;
         np->size = 1;
-        leader.insert(i);
-        elements[i] = np;
+        leader.insert(j);
+        elements[j] = np;
       }
       
     }
