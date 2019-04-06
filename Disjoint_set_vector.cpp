@@ -78,7 +78,7 @@ int main() {
     /* Enter your code here. Read input from STDIN. Print output to STDOUT */   
     long int n,q;
     cin>>n>>q;
-    disjoint_set ds;
+    disjoint_set<int> ds;
     ds.makeset(n);
     return 0;
 }
