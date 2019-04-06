@@ -17,9 +17,9 @@ class disjoint_set
     
   void makeset(T n) 
   {
-      rank.resize(n);
-      parent.resize(n);
-      size.resize(n);
+      rank.resize(n+1);
+      parent.resize(n+1);
+      size.resize(n+1);
       for (T i = 1; i <= n; i++) 
       {
         parent[i] = i;
