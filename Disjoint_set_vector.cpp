@@ -6,19 +6,21 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+template <typename T>
 class disjoint_set 
 {
-  vector<long int> rank,parent,size;
+  vector<T> rank,size;
+  vector<T> parent;
   
   public:
-    unordered_set<long int> leader;
+    unordered_set<T> leader;
     
-  void makeset(long int n) 
+  void makeset(T n) 
   {
       rank.resize(n);
       parent.resize(n);
       size.resize(n);
-      for (long int i = 1; i <= n; i++) 
+      for (T i = 1; i <= n; i++) 
       {
         parent[i] = i;
         rank[i] = 0;
@@ -27,17 +29,17 @@ class disjoint_set
       }
   }
 
-  long int find(long int i) 
+  T find(T i) 
   {
     if (parent[i] != i)
       parent[i] = find(parent[i]);
     return parent[i];
   }
 
-  void merge(long int x,long int y) 
+  void merge(T x,T y) 
   {
-   long int x_root = find(x);
-   long int y_root = find(y);
+   T x_root = find(x);
+   T y_root = find(y);
     if (x_root != y_root) 
     {
       if (size[x_root] < size[y_root])
@@ -65,7 +67,7 @@ class disjoint_set
       }
     }
 
-    long int getsize(long int x)
+    T getsize(T x)
     {
         return size[find(x)];
 
